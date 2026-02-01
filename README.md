@@ -1,112 +1,210 @@
-# Network-based resilience indicators for aquatic food systems
+# Network-based Resilience Indicators for Aquatic Food Systems
 
-## Overview
+## 1. Research Vision & Motivation
 
-This project explores how **aquatic food systems** (with a focus on Red Sea fisheries) respond to environmental and human-induced stress using **network-based modeling**. The goal is to identify **resilience and vulnerability indicators** that can inform sustainability and management decisions.
+Aquatic food systems (AFS) are complex socio-ecological systems where biological interactions, environmental variability, and human exploitation co-evolve. Climate change, overfishing, and ecosystem degradation threaten the stability and sustainability of fisheries, particularly in sensitive regions such as the Red Sea.
 
-Aquatic ecosystems are complex, multi-layered systems where biological interactions, environmental conditions, and human activities are tightly coupled. Rather than modeling individual species in isolation, this project represents the system as a **multi-layer network** and studies how its structure changes under perturbations such as climate stress and overfishing.
-
----
-
-## Research Question
-
-> *How resilient is an aquatic food system to environmental and anthropogenic shocks, and can network-based indicators provide early warning signals of instability?*
+This project aims to **formalize aquatic food systems as multi-layer networks** and derive **quantitative resilience indicators** that can support sustainability assessment and policy-relevant decision-making. By integrating ecological, environmental, and anthropogenic layers, the project bridges **network science, environmental systems modeling, and data-driven sustainability research**.
 
 ---
 
-## Conceptual Framework
+## 2. Core Research Questions
 
-The aquatic food system is modeled as a **multi-layer network**:
-
-### 1. Biological layer
-
-* **Nodes:** fish and marine species
-* **Edges:** trophic or interaction relationships (e.g., predation, competition)
-
-### 2. Environmental layer
-
-* **Nodes:** environmental variables (e.g., sea surface temperature, salinity)
-* **Edges:** influence relationships between environmental variables and species
-
-### 3. Human pressure layer
-
-* **Nodes:** fishing intensity, effort proxies, or catch indicators
-* **Edges:** pressure exerted on biological nodes
-
-These layers are coupled to capture cross-scale interactions between ecology, environment, and human activity.
+1. How can aquatic food systems be represented as multi-layer networks that integrate ecological, environmental, and human pressures?
+2. Which network-derived metrics best capture system resilience under climate and exploitation shocks?
+3. How do different shock scenarios (temperature increase, fishing pressure, compound stressors) alter system connectivity, redundancy, and vulnerability?
+4. Can simple, interpretable indicators inform sustainability-oriented decisions in data-limited environments?
 
 ---
 
-## Resilience Indicators
+## 3. Theoretical Framework
 
-Resilience is defined operationally as the **ability of the network to maintain connectivity and functional integrity under perturbations**.
+### 3.1 Systems Theory Perspective
 
-The following indicators are evaluated:
+* Aquatic food systems are **complex adaptive systems**
+* Emergent properties (collapse, resilience, recovery) arise from interactions, not individual components
 
-* **Connectivity**
+### 3.2 Network Science Foundations
 
-  * Size of the largest connected component
-  * Network density
-  * Average shortest path length
+* Graph theory for modeling interactions
+* Multi-layer (multiplex) networks for heterogeneous interactions
+* Node and edge attributes encode biological and environmental meaning
 
-* **Redundancy**
+### 3.3 Resilience Theory
 
-  * Alternative paths between nodes
-  * Degree distribution and role overlap
-
-* **Vulnerability**
-
-  * Sensitivity to random node removal
-  * Sensitivity to targeted node removal (e.g., highly connected species)
-  * Collapse thresholds
+* Ecological resilience vs engineering resilience
+* Focus on **capacity to absorb shocks without structural collapse**
+* Operationalized via network topology and robustness
 
 ---
 
-## Shock Simulations
+## 4. Conceptual Model
 
-To assess system robustness, the following perturbations are simulated:
+### 4.1 Multi-layer Network Design
 
-* **Climate stress:** gradual increase in temperature variability
-* **Overfishing:** targeted removal or pressure on key species
-* **Compound shocks:** combined environmental and fishing stress
+**Layer 1 – Ecological Layer**
 
-Changes in resilience indicators are tracked across scenarios.
+* Nodes: species / functional groups
+* Edges: trophic or interaction relationships
 
----
+**Layer 2 – Environmental Layer**
 
-## Data Sources
+* Nodes: environmental variables (temperature, salinity, chlorophyll)
+* Edges: influence links to species nodes
 
-* FAO fisheries statistics
-* NOAA environmental datasets
-* Public Red Sea ecological datasets
+**Layer 3 – Human Pressure Layer**
 
-All datasets are harmonized temporally and spatially prior to modeling.
+* Nodes: fishing effort / gear types / pressure proxies
+* Edges: exploitation links to species
 
----
-
-## Methods & Tools
-
-* **Programming:** Python
-* **Network analysis:** NetworkX
-* **Optional deep learning:** PyTorch Geometric (light use)
-* **Data handling:** pandas, numpy
-* **Visualization:** matplotlib
+Layers are interconnected via inter-layer edges.
 
 ---
 
-## Project Relevance
+## 5. Resilience Metrics (Formal Definitions)
 
-This work demonstrates:
+### 5.1 Connectivity
 
-* Systems-level thinking
-* Network-based modeling of biological systems
-* Sustainability-oriented analysis
-* Decision-relevant outputs for fisheries management
+* Average degree
+* Network density
+* Size of largest connected component
 
-The project is aligned with interdisciplinary research at the interface of **bioscience, environmental sustainability, and data science**.
+### 5.2 Redundancy
+
+* Alternative paths between critical nodes
+* Edge overlap across layers
+* Functional group redundancy
+
+### 5.3 Vulnerability
+
+* Node removal impact
+* Targeted vs random attacks
+* Robustness curves
+
+### 5.4 System-level Indicators
+
+* Resilience index (composite)
+* Collapse threshold
+* Recovery potential proxy
 
 ---
 
-## Status
+## 6. Shock Simulation Framework
 
-This is an active research-style project developed to support applications to research internships and graduate programs in bioscience, computational sustainability, and population-level modeling.
+### 6.1 Shock Types
+
+* Climate shock: gradual temperature increase
+* Exploitation shock: intensified fishing pressure
+* Compound shock: combined stressors
+
+### 6.2 Simulation Logic
+
+* Modify node/edge weights over time
+* Remove nodes or weaken interactions
+* Track metric evolution
+
+### 6.3 Outputs
+
+* Time-series of resilience metrics
+* Vulnerability rankings
+* Comparative scenario analysis
+
+---
+
+## 7. Data Strategy
+
+### 7.1 Data Sources
+
+* FAO fisheries datasets
+* NOAA environmental data
+* Red Sea regional datasets
+
+### 7.2 Data Assumptions
+
+* Proxy-based modeling for missing data
+* Sensitivity analysis for uncertainty
+
+---
+
+## 8. Knowledge Base (KB)
+
+### 8.1 Core Domains
+
+* Network science
+* Ecology & food webs
+* Climate impacts on fisheries
+* Sustainability science
+* Data-driven environmental modeling
+
+### 8.2 Key Concepts
+
+* Multiplex networks
+* Robustness analysis
+* Ecological thresholds
+* Socio-ecological coupling
+
+### 8.3 Canonical References (indicative)
+
+* Newman, *Networks*
+* Levin, *Fragile Dominion*
+* Folke et al., resilience theory papers
+* FAO fisheries reports
+
+---
+
+## 9. Technical Architecture
+
+### 9.1 Core Stack
+
+* Python
+* NetworkX
+* PyTorch Geometric (optional)
+* NumPy / Pandas
+
+### 9.2 System Layers
+
+1. Data ingestion & preprocessing
+2. Network construction
+3. Metric computation
+4. Simulation engine
+5. API layer (FastAPI)
+6. Visualization layer
+
+---
+
+## 10. API & Interface Philosophy
+
+* Thin API for reproducible research
+* Deterministic simulations
+* Separation of computation and visualization
+
+---
+
+## 11. Validation & Evaluation
+
+* Internal consistency checks
+* Scenario comparison
+* Sensitivity analysis
+* Interpretability over prediction accuracy
+
+---
+
+## 12. Ethical & Sustainability Considerations
+
+* Transparent assumptions
+* Avoid false precision
+* Decision-support, not decision-automation
+
+---
+
+## 13. Limitations
+
+* Data sparsity
+* Simplified ecological interactions
+* No economic optimization layer (by design)
+
+---
+
+## 15. Positioning Statement
+
+This project demonstrates the integration of **theoretical ecology, network science, and data-driven sustainability modeling**, positioned for computational environmental research and interdisciplinary bioscience programs.
