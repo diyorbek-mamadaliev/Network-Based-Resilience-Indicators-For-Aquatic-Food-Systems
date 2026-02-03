@@ -1,0 +1,14 @@
+{
+  "description": "Minimal synthetic aquatic food web for resilience prototyping",
+  "nodes": [
+    {"id": "Phytoplankton", "type": "primary_producer"},
+    {"id": "Zooplankton", "type": "consumer"},
+    {"id": "SmallFish", "type": "consumer"},
+    {"id": "LargeFish", "type": "top_predator"}
+  ],
+  "edges": [
+    {"source": "Phytoplankton", "target": "Zooplankton"},
+    {"source": "Zooplankton", "target": "SmallFish"},
+    {"source": "SmallFish", "target": "LargeFish"}
+  ]
+}
